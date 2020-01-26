@@ -1,19 +1,19 @@
 <?php
-namespace tpext\lyatadmin\common\hooks;
+namespace tpext\lightyearadmin\common\hooks;
 
 use think\facade\Request;
-use think\facade\View;
-use tpext\lyatadmin\common\Module;
+use tpext\lightyearadmin\common\Plugin;
 
 class Setup
 {
     public function run($data = [])
     {
+        //$module = $data[1];
         $module = Request::module();
 
         if ($module == 'admin') { //admin模块， 替换错误和跳转模板
 
-            $instance = Module::getInstance();
+            $instance = Plugin::getInstance();
 
             $rootPath = $instance->getRoot();
 
@@ -22,11 +22,6 @@ class Setup
             config('exception_tmpl', $tplPath . 'exception_tmpl.tpl');
             config('dispatch_success_tmpl', $tplPath . 'dispatch_jump.tpl');
             config('dispatch_error_tmpl', $tplPath . 'dispatch_jump.tpl');
-
-            $config = Module::getInstance()->loadConfig();
-
-            View::share(['admin' => $config]);
-
         }
     }
 }

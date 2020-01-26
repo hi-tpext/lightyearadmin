@@ -1,21 +1,23 @@
 <?php
 
-namespace tpext\lyatadmin\common;
+namespace tpext\lightyearadmin\common;
 
 use tpext\common\ExtLoader;
 use tpext\common\Plugin as basePlugin;
-use tpext\lyatadmin\common\hooks\Setup;
+use tpext\lightyearadmin\common\hooks\Setup;
 
 class Plugin extends basePlugin
 {
-    protected $name = 'tpext.lyatadmin.plugin';
+    protected $name = 'light.year.admin';
 
     protected $__root__ = __DIR__ . '/../../';
 
+    protected $assets = 'assets';
+
     public function pluginInit($info = [])
     {
-        ExtLoader::watch('module_init', Setup::class, '替换错误及跳转模板', false);
+        ExtLoader::watch('module_init', Setup::class, '设置模板', false);
 
-        return true;
+        return parent::pluginInit($info);
     }
 }
