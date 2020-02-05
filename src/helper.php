@@ -11,7 +11,7 @@
 use tpext\common\ExtLoader;
 
 $classMap = [
-    'tpext\\lightyearadmin\common\\Plugin',
+    'tpext\\lightyearadmin\\common\\Plugin',
 ];
 
 ExtLoader::addClassMap($classMap);
