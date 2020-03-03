@@ -1,7 +1,7 @@
 {
     "name": "ichynul/lightyearadmin",
-    "description": "the new thinkphp framework",
-    "type": "project",
+    "description": "thinkphp extension",
+    "type": "library",
     "keywords": [
         "thinkphp"
     ],
