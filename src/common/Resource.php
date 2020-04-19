@@ -2,9 +2,9 @@
 
 namespace tpext\lightyearadmin\common;
 
-use tpext\common\Module as baseModule;
+use tpext\common\Resource as baseResource;
 
-class Module extends baseModule
+class Resource extends baseResource
 {
     protected $version = '1.0.1';
 

@@ -3,7 +3,7 @@
 use tpext\common\ExtLoader;
 
 $classMap = [
-    'tpext\\lightyearadmin\\common\\Module',
+    'tpext\\lightyearadmin\\common\\Resource',
 ];
 
 ExtLoader::addClassMap($classMap);
