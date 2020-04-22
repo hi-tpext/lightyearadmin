@@ -4,8 +4,8 @@
  * http://www.itshubao.com
  * yinqi<3331653644@qq.com>
  -------------------------------------- */
-body {
-	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 	color: #4d5259;
 	line-height: 1.5;
 	font-size: 14px;
@@ -18,8 +18,8 @@ body {
 }
 a {
     color: #33cabb;
-	-webkit-transition: border-color,background-color,color,opacity,padding .2s linear;
-	transition: border-color,background-color,color,opacity,padding .2s linear
+	-webkit-transition: .2s linear;
+	transition: .2s linear
 }
 a:hover,
 a:focus {
@@ -829,6 +829,11 @@ input[type=radio] {
 
 .checkbox-inline, .radio-inline {
     display: inline-block;
+}
+.form-horizontal .lyear-radio.radio-inline,
+.form-horizontal .lyear-checkbox.checkbox-inline {
+    padding-top: 0px;
+    margin-top: 8px;
 }
 
 /* 开关 */
@@ -1914,13 +1919,13 @@ fieldset[disabled] .btn-dark:hover {
 .btn-group-xs>.btn,
 .btn-xs {
 	font-size: 12px;
-	padding: 2px 8px;
+	padding: 2px 6px;
 	line-height: 18px
 }
 .btn-group-sm>.btn,
 .btn-sm {
 	font-size: 12px;
-	padding: 4px 12px;
+	padding: 4px 8px;
 	line-height: 20px
 }
 .btn-group-lg>.btn,
@@ -1928,6 +1933,27 @@ fieldset[disabled] .btn-dark:hover {
 	font-size: 16px;
 	padding: 7px 20px;
 	line-height: 32px
+}
+.btn-sm.btn-label {
+    padding-left: 42px;
+}
+.btn-sm.btn-label label {
+    line-height: 20px;
+    width: 30px;
+}
+.btn-lg.btn-label {
+    padding-left: 58px;
+}
+.btn-lg.btn-label label {
+    line-height: 36px;
+    width: 36px;
+}
+.btn-xs.btn-label {
+    padding-left: 36px;
+}
+.btn-xs.btn-label label {
+    line-height: 14px;
+    width: 28px;
 }
 .btn-group-justified {
     display: -webkit-box;
@@ -2583,6 +2609,7 @@ dd, dt {
     padding-left: 52.99999px;
     color: inherit;
     font-weight: 500;
+    white-space: nowrap;
 }
 .nav-drawer > li > a {
     border-right: 3px solid transparent;
@@ -2773,11 +2800,6 @@ dd, dt {
     height: 100%;
 }
 
-.lyear-layout-content .container-fluid {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
 /* card */
 .card {
 	margin-bottom: 24px;
@@ -2786,7 +2808,6 @@ dd, dt {
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.035);
 }
 .card-header {
-	display: table;
 	width: 100%;
 	margin: 0;
 	padding: 15px 24px;
@@ -2797,11 +2818,18 @@ dd, dt {
 	display: table-cell;
 	vertical-align: middle;
 }
+.card-header:after,
+.card-footer:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
 .card-body {
     padding: 24px 24px;
 }
 .card-header .h4,
 .card-header h4 {
+    float: left;
     font-size: 16px;
 }
 .card-header + .card-body {
@@ -2889,7 +2917,11 @@ dd, dt {
 .card .tab-content {
     padding: 10px 24px;
 }
-
+.card-footer {
+    background-color: #fcfdfe;
+    border-top: 1px solid rgba(77,82,89,0.05);
+    padding: 15px 24px;
+}
 /* page-tabs */
 .page-tabs.nav-tabs {
     padding: 0px 10px;
@@ -3134,7 +3166,12 @@ dd, dt {
     display: flex;
     -webkit-align-items: stretch;
     align-items: stretch;
-    margin-bottom: 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: -10px;
+}
+.lyear-uploads-pic li {
+    margin-bottom: 10px;
 }
 .lyear-uploads-pic figure  {
     position: relative;
@@ -3272,9 +3309,9 @@ dd, dt {
         float: none!important;
     }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
     .dropdown-skin .dropdown-menu {
-        width: -131px!important; 
+        left: -80px!important; 
     }
     .nav-step .nav-step-item p {
         display: none;
@@ -3306,8 +3343,8 @@ dd, dt {
         opacity: 0;
     }
     .lyear-layout-sidebar {
-        -webkit-transition: width .3s ease-in-out;
-	    transition: width .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+	    transition: all .3s ease-in-out;
     }
     .lyear-layout-sidebar-close .lyear-layout-sidebar:hover {
         width: 240px;
