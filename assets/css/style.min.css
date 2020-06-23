@@ -142,6 +142,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .table>thead>tr>td,
 .table>thead>tr>th {
     /*padding: .75em;*/
+    vertical-align: middle;
     padding: 10px;
 	line-height: 1.5;
     border-color: #eceeef;
@@ -218,6 +219,60 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     background-color: #fcc525;
 }
 .label-brown {
+    background-color: #8d6658;
+}
+[class*='label-outline-'] {
+    position: relative;
+	border: 1px solid #ebebeb;
+    color: #4d5259;
+    font-size: 12px;
+}
+[class*='label-outline-']:before {
+    content: "";
+    margin-right: 5px;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    -wekit-border-radius: 50%;
+    border-radius: 50%;
+}
+.label-outline-default::before {
+    background-color: #f5f6f7;
+}
+.label-outline-primary::before {
+    background-color: #33cabb;
+}
+.label-outline-success::before {
+    background-color: #15c377;
+}
+.label-outline-info::before {
+    background-color: #48b0f7;
+}
+.label-outline-warning::before {
+    background-color: #faa64b;
+}
+.label-outline-danger::before {
+    background-color: #f96868;
+}
+.label-outline-dark::before {
+    background-color: #465161;
+}
+.label-outline-secondary::before {
+    background-color: #e4e7ea;
+}
+.label-outline-purple::before {
+    background-color: #926dde;
+}
+.label-outline-pink::before {
+    background-color: #f96197;
+}
+.label-outline-cyan::before {
+    background-color: #57c7d4;
+}
+.label-outline-yellow::before {
+    background-color: #fcc525;
+}
+.label-outline-brown::before {
     background-color: #8d6658;
 }
 
@@ -567,6 +622,7 @@ button.list-group-item:hover {
     margin-bottom: 0px;
     cursor: pointer;
     padding-left: 30px;
+    padding-right: 10px;
     font-weight: 400;
     min-height: 18px;
     height: auto!important;
@@ -834,6 +890,10 @@ input[type=radio] {
 .form-horizontal .lyear-checkbox.checkbox-inline {
     padding-top: 0px;
     margin-top: 8px;
+}
+.checkbox-inline+.checkbox-inline,
+.radio-inline+.radio-inline {
+    margin-left: 0px;
 }
 
 /* 开关 */
@@ -2399,6 +2459,16 @@ dd, dt {
 	width: 100%;
 }
 
+/* 边框 */
+.no-border-tb {
+    border-top: 0px;
+    border-bottom: 0px
+}
+.no-border-lr {
+    border-left: 0px;
+    border-right: 0px;
+}
+
 /* 图库 */
 .masonry-grid {
     -webkit-column-count: 3;
@@ -3311,7 +3381,7 @@ dd, dt {
 }
 @media screen and (max-width: 430px) {
     .dropdown-skin .dropdown-menu {
-        left: -80px!important; 
+        left: -80px!important;
     }
     .nav-step .nav-step-item p {
         display: none;
