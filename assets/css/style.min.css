@@ -2025,7 +2025,8 @@ fieldset[disabled] .btn-dark:hover {
     -webkit-box-pack: justify;
     justify-content: space-between;
 }
-.btn-group-justified .btn {
+.btn-group-justified .btn,
+.btn-group-justified .btn-group {
     width: 100%;
 }
 .btn-group-round .btn:first-child {
