@@ -6,7 +6,7 @@ use tpext\common\Resource as baseResource;
 
 class Resource extends baseResource
 {
-    protected $version = '1.0.2';
+    protected $version = '1.0.3';
 
     protected $name = 'lightyear.admin';
 
